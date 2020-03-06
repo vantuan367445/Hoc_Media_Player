@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".activity.MainActivity">
+    <android.support.v7.widget.Toolbar
+        app:titleTextColor="#ffff"
+        app:title="Media Player"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+    </android.support.v7.widget.Toolbar>
+    <ListView
+        android:layout_marginTop="?actionBarSize"
+        android:layout_marginBottom="50dp"
+        android:id="@+id/lvMainSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/linearMain"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <ProgressBar
+            android:id="@+id/proBarMainSong"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:indeterminate="false"
+            android:layout_height="5dp"/>
+
+        <LinearLayout
+            android:weightSum="10"
+            android:orientation="horizontal"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <LinearLayout
+                android:layout_weight="8"
+                android:id="@+id/linearMain_TitleandArtist"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/txtMain_titleSong"
+                    android:maxLines="1"
+                    android:textSize="15sp"
+                    android:textColor="#fff"
+                    android:text="rỗng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/txtMain_artistSong"
+                    android:maxLines="1"
+                    android:textSize="15sp"
+                    android:textColor="#ffff"
+                    android:text="rỗng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:layout_alignParentRight="true"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <ImageButton
+                    android:id="@+id/imgMain_PlayandPause"
+                    android:background="@null"
+                    android:layout_marginRight="20dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/play_24dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
+                <ImageButton
+                    android:id="@+id/imgMain_Next"
+                    android:layout_marginRight="10dp"
+                    android:background="@null"
+                    android:layout_gravity="center"
+                    android:src="@drawable/right_24dp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:background="#83b3c3"
+        android:orientation="vertical"
+        android:id="@+id/linear_playSong"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txtExtra_TitleSong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Buồn Không Em-Đạt G"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imgHinh"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/logo" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtExtra_timeStartSong"
+                android:layout_width="20dp"
+                android:layout_height="50dp"
+                android:layout_weight="2"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="@android:color/background_light" />
+
+
+            <SeekBar
+                android:id="@+id/seekBarExtra_Song"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/txtExtra_timeEnd"
+                android:layout_marginRight="5dp"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="00:00"
+                android:textColor="@android:color/background_light" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/imgExtra_ShuffleRepeat"
+                android:src="@drawable/repeat_24dp"
+                android:background="@null"
+                android:layout_width="24dp"
+                android:layout_height="24dp"/>
+            <LinearLayout
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imgExtra_Left"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@null"
+                    android:src="@drawable/left_32dp" />
+
+                <ImageButton
+                    android:id="@+id/imgExtra_PlayandPause"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@null"
+                    android:src="@drawable/play_32dp" />
+
+                <ImageButton
+                    android:id="@+id/imgExtra_Right"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@null"
+                    android:src="@drawable/right_32dp" />
+
+            </LinearLayout>
+            <ImageButton
+                android:src="@drawable/favorite_24dp"
+                android:background="@null"
+                android:layout_width="24dp"
+                android:layout_height="24dp"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
